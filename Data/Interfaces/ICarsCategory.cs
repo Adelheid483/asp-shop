@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using asp_shop.Data.Models;
 
 namespace asp_shop.Data.Interfaces

@@ -10,7 +10,7 @@
         public string img { set; get; } // url
         public ushort price { set; get; } // only for positive values
         public bool isFavorite { set; get; }
-        public int available { set; get; }
+        public bool available { set; get; }
         public int categoryID { set; get; } // assigning to a specific only ONE category (id in Category class)
         public virtual Category Category { set; get; } // creating object based on Category class
 
