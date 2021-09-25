@@ -1,12 +1,8 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using asp_shop.Data.Handlers;
+using asp_shop.Data.Interfaces;
 
 namespace asp_shop
 {
@@ -17,6 +13,8 @@ namespace asp_shop
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddTransient<ICars, CarsHandlers>(); // worker interface + class realizing this interface
+            services.AddTransient<ICategories, CategoriesHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
