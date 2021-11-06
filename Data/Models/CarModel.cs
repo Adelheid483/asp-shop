@@ -1,6 +1,6 @@
 ﻿namespace asp_shop.Data.Models
 {
-    public class Car
+    public class CarModel
     {
         // variables
         public int Id { set; get; }
@@ -12,6 +12,6 @@
         public bool IsFavorite { set; get; }
         public bool Available { set; get; }
         public int CategoryIdCar { set; get; } // assigning to a specific only ONE category (id in Category class)
-        public virtual Category Category { set; get; } // creating object based on Category class
+        public CategoryModel CategoryModel { set; get; } // creating object based on Category class
     }
 }
