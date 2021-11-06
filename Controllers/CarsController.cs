@@ -1,7 +1,7 @@
 ﻿using asp_shop.Data.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace asp_shop.Data.Controllers
+namespace asp_shop.Controllers
 {
     public class CarsController : Controller
     {

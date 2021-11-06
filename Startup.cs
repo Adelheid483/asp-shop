@@ -15,6 +15,7 @@ namespace asp_shop
             services.AddMvc();
             services.AddTransient<ICars, CarsService>(); // worker interface + class realizing this interface
             services.AddTransient<ICategories, CategoriesService>();
+            services.AddMvc(option => option.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,0 +1,27 @@
+﻿@using asp_shop.Data.Models
+@model IEnumerable<CarModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width-device-width">title</meta>
+    <title>title</title>
+</head>
+<body>
+    <h1>All cars</h1>
+    @{
+        foreach (var car in Model)
+        {
+            <div>
+                <h3>Model: @car.Name</h3>
+                <p>Price: @car.Price.ToString("c")</p>
+            </div>
+        }
+    }
+</body>
+</html>
