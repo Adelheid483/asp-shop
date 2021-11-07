@@ -1,4 +1,4 @@
-﻿namespace asp_shop.Data.Controllers
+﻿namespace asp_shop.Controllers
 {
     public class CategoriesController
     {

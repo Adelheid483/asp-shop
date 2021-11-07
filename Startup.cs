@@ -23,7 +23,7 @@ namespace asp_shop
         {
             app.UseDeveloperExceptionPage(); // for displaying the page of mistakes
             app.UseStatusCodePages(); // for displaying page with codes 400-500
-            app.UseStaticFiles(); // for displaying CSS, imgs and othe ststic files
+            app.UseStaticFiles(); // for displaying CSS, images and other static files
             app.UseMvcWithDefaultRoute(); // for using default url-address if don't using controller and view
         }
     }

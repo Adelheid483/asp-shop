@@ -1,5 +1,5 @@
-﻿@using asp_shop.Data.Models
-@model IEnumerable<CarModel>
+﻿@using asp_shop.ViewModels
+@model CarsListViewModel
 
 @{
     Layout = null;
@@ -10,12 +10,13 @@
 <html>
 <head>
     <meta name="viewport" content="width-device-width">title</meta>
-    <title>title</title>
+    <title>All cars</title>
 </head>
 <body>
-    <h1>All cars</h1>
+<h1>All cars</h1>
+<h2>@Model.CurrentCategory</h2>
     @{
-        foreach (var car in Model)
+        foreach (var car in Model.GetAllCars)
         {
             <div>
                 <h3>Model: @car.Name</h3>

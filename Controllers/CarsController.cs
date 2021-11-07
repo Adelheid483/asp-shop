@@ -1,4 +1,5 @@
 ﻿using asp_shop.Data.Interfaces;
+using asp_shop.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace asp_shop.Controllers
@@ -17,10 +18,15 @@ namespace asp_shop.Controllers
             _allCategories = allCategories;
         }
 
-        public ViewResult ReturnCarsList()
+        public ViewResult CarsList()
         {
-            var cars = _allCars.GetCars; // pass data for view
-            return View(cars); // return html-page
+            // ViewBag.Category = "Some new category"; - better do not use: another possibility to pass date into template 
+
+            CarsListViewModel obj = new CarsListViewModel();
+            obj.GetAllCars = _allCars.GetCars;
+            obj.CurrentCategory = "Automobiles";
+            
+            return View(obj); // return html-page
         }
     }
 }
