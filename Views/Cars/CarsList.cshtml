@@ -1,0 +1,28 @@
+﻿@using asp_shop.ViewModels
+@model CarsListViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width-device-width">title</meta>
+    <title>All cars</title>
+</head>
+<body>
+<h1>All cars</h1>
+<h2>@Model.CurrentCategory</h2>
+    @{
+        foreach (var car in Model.GetAllCars)
+        {
+            <div>
+                <h3>Model: @car.Name</h3>
+                <p>Price: @car.Price.ToString("c")</p>
+            </div>
+        }
+    }
+</body>
+</html>

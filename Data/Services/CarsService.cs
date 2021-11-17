@@ -3,16 +3,16 @@ using System.Linq;
 using asp_shop.Data.Interfaces;
 using asp_shop.Data.Models;
 
-namespace asp_shop.Data.Handlers
+namespace asp_shop.Data.Services
 {
-    public class CarsHandlers : ICars
+    public class CarsService : ICars
     {
-        private readonly ICategories _categoriesCars = new CategoriesHandler();
+        private readonly ICategories _categoriesCars = new CategoriesService();
         
-        public IEnumerable<Car> GetCars =>
-            new List<Car>
+        public IEnumerable<CarModel> GetCars =>
+            new List<CarModel>
             {
-                new Car
+                new CarModel
                 {
                     Name = "name1",
                     ShortDescription = "shortDescription",
@@ -21,9 +21,9 @@ namespace asp_shop.Data.Handlers
                     Price = 14000,
                     IsFavorite = true,
                     Available = true,
-                    Category = _categoriesCars.AllCategories.First()
+                    CategoryModel = _categoriesCars.AllCategories.First()
                 },
-                new Car
+                new CarModel
                 {
                     Name = "name2",
                     ShortDescription = "shortDescription",
@@ -32,13 +32,13 @@ namespace asp_shop.Data.Handlers
                     Price = 8000,
                     IsFavorite = false,
                     Available = true,
-                    Category = _categoriesCars.AllCategories.Last()
+                    CategoryModel = _categoriesCars.AllCategories.Last()
                 }
             };
 
-        public IEnumerable<Car> GetFavCars { get; set; }
+        public IEnumerable<CarModel> GetFavCars { get; set; }
         
-        public Car GetCarObject(int carId)
+        public CarModel GetCarObject(int carId)
         {
             throw new System.NotImplementedException();
         }

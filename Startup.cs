@@ -1,12 +1,8 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using asp_shop.Data.Services;
+using asp_shop.Data.Interfaces;
 
 namespace asp_shop
 {
@@ -17,6 +13,9 @@ namespace asp_shop
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddTransient<ICars, CarsService>(); // worker interface + class realizing this interface
+            services.AddTransient<ICategories, CategoriesService>();
+            services.AddMvc(option => option.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -24,7 +23,7 @@ namespace asp_shop
         {
             app.UseDeveloperExceptionPage(); // for displaying the page of mistakes
             app.UseStatusCodePages(); // for displaying page with codes 400-500
-            app.UseStaticFiles(); // for displaying CSS, imgs and othe ststic files
+            app.UseStaticFiles(); // for displaying CSS, images and other static files
             app.UseMvcWithDefaultRoute(); // for using default url-address if don't using controller and view
         }
     }

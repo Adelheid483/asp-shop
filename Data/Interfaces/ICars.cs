@@ -5,8 +5,8 @@ namespace asp_shop.Data.Interfaces
 {
     public interface ICars
     {
-        IEnumerable<Car> GetCars { get; }
-        IEnumerable<Car> GetFavCars { get; set; }
-        Car GetCarObject(int carId);
+        IEnumerable<CarModel> GetCars { get; }
+        IEnumerable<CarModel> GetFavCars { get; set; }
+        CarModel GetCarObject(int carId);
     }
 }
